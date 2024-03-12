@@ -1,0 +1,21 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ValidadoraAcesso {
+
+	private String[] cpfsAutorizados = {"40180553828", "15678495801"};
+	
+	public boolean permiteAcesso(String cpf) {
+		
+		for (String cpfAutorizado : cpfsAutorizados) {
+			if(cpf.equalsIgnoreCase(cpfAutorizado))
+				return true;
+		}
+		
+		return false;
+		
+	}
+	
+}

@@ -1,0 +1,23 @@
+package testesUnitarios;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import model.CodigoPessoaFisica;
+
+public class CodigoPessoaFisicaTeste {
+
+	CodigoPessoaFisica cpf = new CodigoPessoaFisica();
+	
+	@Test
+	public void testeValidaCpfGustavo() {
+		assertEquals(cpf.validaCPF("401.805.538-28"), true);
+	}
+	
+	@Test
+	public void testeValidaCpfFalso() {
+		assertEquals(cpf.validaCPF("401.805.538-28"), true);
+	}
+
+}

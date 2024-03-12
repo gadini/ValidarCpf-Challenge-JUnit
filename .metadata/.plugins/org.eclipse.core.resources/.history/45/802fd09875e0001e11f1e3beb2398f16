@@ -1,0 +1,31 @@
+package testesUnitarios;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import model.CodigoPessoaFisica;
+import model.ValidadoraAcesso;
+
+public class ValidadoraAcessoTeste {
+	
+	CodigoPessoaFisica cpf = new CodigoPessoaFisica();
+	ValidadoraAcesso acesso = new ValidadoraAcesso();
+	String cpfAcesso;
+	
+	@Before
+	public void setupAcesso() {
+		String[] cpfsAutorizados = {"40180553828"};
+		acesso.setCpfsAutorizados(cpfsAutorizados);
+	}
+
+	@Test
+	public void permiteAcessoTeste() {
+		cpfAcesso = "15678495801";
+		
+		if(cpf.validaCPF(cpfAcesso))
+			assertEquals(cpfAcesso, false);
+	}
+
+}

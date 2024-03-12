@@ -1,0 +1,9 @@
+package model;
+
+import java.util.List;
+
+public class ValidadoraAcesso {
+
+	private final String[] cpfsAutorizados = {"40180553828", "15678495801"};
+	
+}

@@ -1,0 +1,24 @@
+package testesUnitarios;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import model.ValidadoraAcesso;
+
+public class ValidadoraAcessoTeste {
+	
+	ValidadoraAcesso acesso = new ValidadoraAcesso();
+	
+	@Before
+	public void setupAcesso() {
+		
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,14 @@
+package testesUnitarios;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LogCPFTeste {
+
+	@Test
+	public void testeLogCPF() {
+		fail("Not yet implemented");
+	}
+
+}

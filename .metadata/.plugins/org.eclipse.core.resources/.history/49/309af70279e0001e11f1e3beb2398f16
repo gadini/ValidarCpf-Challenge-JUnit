@@ -1,0 +1,44 @@
+package testesUnitarios;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import model.CodigoPessoaFisica;
+import model.LogCPF;
+import model.ValidadoraAcesso;
+
+public class LogCPFTeste {
+	
+	CodigoPessoaFisica cpf = new CodigoPessoaFisica();
+	ValidadoraAcesso acesso = new ValidadoraAcesso();
+	LogCPF log = new LogCPF();
+	String cpfAcesso;
+	
+	@Before
+	public void setupLog() {
+		String[] cpfsAutorizados = {"40180553828"};
+		acesso.setCpfsAutorizados(cpfsAutorizados);
+	}
+
+	@Test
+	public void formataRetorno1() {
+		cpfAcesso = cpf.removeCaracteresEspeciais("156.784.958-01");
+		
+		if(cpf.validaCPF(cpfAcesso))
+			assertEquals(log.formataRetorno(acesso.permiteAcesso(cpfAcesso)), "Seu CPF é inválido para acesso ao sistema");
+	}
+	
+	@Test
+	public void permiteAcessoTeste2() {
+		cpfAcesso = cpf.removeCaracteresEspeciais("401.805.538-28");
+		
+		if(cpf.validaCPF(cpfAcesso))
+			assertEquals(log.formataRetorno(acesso.permiteAcesso(cpfAcesso)), "Seu CPF é válido para acesso ao sistema");
+	
+	}
+
+
+
+}
